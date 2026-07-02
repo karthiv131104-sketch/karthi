@@ -1,0 +1,83 @@
+body {
+    background-image: url("p.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
+form {
+    width: 300px;
+    margin: 100px auto;
+    padding: 30px;
+    font-weight: bold;
+    font-style: italic;
+
+    background: rgba(255, 255, 255, 0.6);
+
+    border: 3px solid brown;
+    border-radius: 0px 80px 0px 80px;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow: 0 0 20px brown;
+
+    /* Animation */
+    animation: borderGlow 3s infinite;
+
+    /* Transition */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover Effect */
+form:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px orange;
+}
+
+@keyframes borderGlow {
+    0% {
+        border-color: brown;
+        box-shadow: 0 0 15px brown;
+    }
+    50% {
+        border-color: orange;
+        box-shadow: 0 0 30px orange;
+    }
+    100% {
+        border-color: brown;
+        box-shadow: 0 0 15px brown;
+    }
+}
+
+h2 {
+    text-align: center;
+    font-size: xx-large;
+    font-style: italic;
+    font-weight: 900;
+    color: black;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid brown;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0px 20px 0px 20px;
+}
+
+input[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid brown;
+    border-radius: 0px 20px 0px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: brown;
+    color: white;
+}

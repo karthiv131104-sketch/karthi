@@ -1,0 +1,43 @@
+<!DOCTYPE html>  <html>  
+<head>  
+    <title>Password Validation</title> 
+<link rel="stylesheet" href="style.css">
+ <script>  
+    function validateForm() {  
+
+        let name = document.getElementById("name").value;  
+        let password = document.getElementById("password").value;  
+
+        let pattern = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&*!]).{8,}$/;  
+
+        if (name == "") {  
+            alert("Please enter your name");  
+            return false;  
+        }  
+
+        if (!pattern.test(password)) {  
+            alert("Password must contain:\n\n• At least 8 characters\n• One uppercase letter\n• One number\n• One special character");  
+            return false;  
+        }  
+
+        alert("Form Submitted Successfully");  
+        return true;  
+    }  
+</script>
+
+</head>  <body>  <h2>LOGIN FORM</h2>  
+
+<form onsubmit="return validateForm()">  
+
+    NAME:  
+    <input type="text" id="name"><br><br>  
+
+    PASSWORD:  
+    <input type="password" id="password"><br><br>  
+
+    <input type="submit" value="Submit">  
+
+</form>
+
+</body>  
+</html>
