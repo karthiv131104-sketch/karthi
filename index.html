@@ -1,43 +1,57 @@
-<!DOCTYPE html>  <html>  
-<head>  
-    <title>Password Validation</title> 
-<link rel="stylesheet" href="style.css">
- <script>  
-    function validateForm() {  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation</title>
 
-        let name = document.getElementById("name").value;  
-        let password = document.getElementById("password").value;  
+    <link rel="stylesheet" href="style.css">
 
-        let pattern = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&*!]).{8,}$/;  
+    <script>
+        function validateForm() {
 
-        if (name == "") {  
-            alert("Please enter your name");  
-            return false;  
-        }  
+            let name = document.getElementById("name").value;
+            let password = document.getElementById("password").value;
 
-        if (!pattern.test(password)) {  
-            alert("Password must contain:\n\n• At least 8 characters\n• One uppercase letter\n• One number\n• One special character");  
-            return false;  
-        }  
+            let pattern = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&*!]).{8,}$/;
 
-        alert("Form Submitted Successfully");  
-        return true;  
-    }  
-</script>
+            if (name == "") {
+                alert("Please enter your name");
+                return false;
+            }
 
-</head>  <body>  <h2>LOGIN FORM</h2>  
+            if (!pattern.test(password)) {
+                alert(
+                    "Password must contain:\n\n" +
+                    "â€¢ At least 8 characters\n" +
+                    "â€¢ One uppercase letter\n" +
+                    "â€¢ One number\n" +
+                    "â€¢ One special character"
+                );
+                return false;
+            }
 
-<form onsubmit="return validateForm()">  
+            alert("Form Submitted Successfully");
+            return true;
+        }
+    </script>
+</head>
 
-    NAME:  
-    <input type="text" id="name"><br><br>  
+<body>
 
-    PASSWORD:  
-    <input type="password" id="password"><br><br>  
+    <form onsubmit="return validateForm()">
 
-    <input type="submit" value="Submit">  
+        <h2>LOGIN FORM</h2>
 
-</form>
+        <label for="name">NAME</label>
+        <input type="text" id="name" placeholder="Enter your name">
 
-</body>  
+        <label for="password">PASSWORD</label>
+        <input type="password" id="password" placeholder="Enter password">
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>
 </html>
